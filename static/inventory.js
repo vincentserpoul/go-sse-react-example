@@ -7,8 +7,13 @@ if (typeof EventSource === "undefined") {
     console.log(event);
   };
 
-  const name = "Josh Perez";
-  const element = <h1>Hello, {name}</h1>;
+  const Welcome = props => <h1>Hello, {props.name}</h1>;
 
-  ReactDOM.render(element, document.getElementById("root"));
+  class App extends React.Component {
+    render() {
+      return <Welcome name="Vincent" />;
+    }
+  }
+
+  ReactDOM.render(<App />, document.getElementById("root"));
 }
